@@ -22,9 +22,10 @@ function WeatherApp() {
   const [thirdDay, setThirdDay] = useState();
   const [fourthDay, setFourthDay] = useState();
   const [fifthDay, setFifthDay] = useState();
+  const apiKey = process.env.REACT_APP_API_KEY;
 
-  const url = `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/weather?q=${val}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
-  const forecast = `https://cors-anywhere.herokuapp.com/https://api.openweathermap.org/data/2.5/forecast?q=${val}&units=imperial&appid=${process.env.REACT_APP_API_KEY}`;
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${val}&units=imperial&appid=${apiKey}`;
+  const forecast = `https://api.openweathermap.org/data/2.5/forecast?q=${val}&units=imperial&appid=${apiKey}`;
 
   const getDefault = () => {
     if (val === "New York, NY, US") {
